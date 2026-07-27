@@ -1,0 +1,31 @@
+/* src/App.css */
+
+/* Overall App Wrapper */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+/* Main Content Area */
+main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Utility classes for smooth page transitions or containers */
+.page-wrapper {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
