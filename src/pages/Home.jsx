@@ -8,7 +8,7 @@ export default function Home() {
       <section className="home-hero">
         <span className="home-badge">Available for Projects</span>
         <h1 className="home-title">
-          Crafting Web Experiences & <span className="highlight">Smart Automations</span>
+          Crafting Web Experiences & <span className="highlight">zaffar-portfolio</span>
         </h1>
         <p className="home-description">
           Hi, I'm Zaffar Khurram. I specialize in building fast single-page applications 
