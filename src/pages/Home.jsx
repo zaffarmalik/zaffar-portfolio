@@ -1,31 +1,12 @@
 import React from 'react';
 import './Home.css';
-// import profileImg from './assets/profile.jpg'; // src/assets/src/assets/WhatsApp Image 2026-07-25 at 1.33.45 PM.jpeg
 
 export default function Home() {
   return (
     <section className="home-container">
       <div className="home-content">
-        
-        {/* Profile Image & Status Badge Wrapper */}
-        <div className="profile-wrapper">
-          <div className="profile-img-container">
-            {/* Apni pic yahan Replace karein */}
-            <img 
-              src={profileImg}
-              alt="Zaffar Khurram" 
-              className="profile-img" 
-            />
-          </div>
-          <div className="status-badge">
-            <span className="pulsing-dot"></span> Available for Web & AI Automation Projects
-          </div>
-        </div>
-
-        {/* Professional Name & Title */}
-        <div className="hero-text-block">
-          <h2 className="developer-name">Zaffar Khurram</h2>
-          <p className="developer-title">Full-Stack Developer & AI Automation Specialist</p>
+        <div className="status-badge">
+          <span className="pulsing-dot"></span> Available for Web & AI Automation Projects
         </div>
 
         <h1 className="home-title">
@@ -33,7 +14,7 @@ export default function Home() {
         </h1>
 
         <p className="home-subtitle">
-          Specializing in fast, responsive React frontends and architecting autonomous n8n automation pipelines that cut operational overhead and streamline business logic.
+          Hi, I'm <strong className="white-text">Zaffar Khurram</strong>. I specialize in crafting fast React frontends and architecting autonomous n8n automation pipelines that cut operational overhead.
         </p>
 
         <div className="home-cta-group">
@@ -41,7 +22,6 @@ export default function Home() {
           <a href="#contact" className="secondary-btn">Get In Touch</a>
         </div>
 
-        {/* Stats Grid */}
         <div className="stats-grid">
           <div className="stat-card">
             <h3>99%+</h3>
@@ -49,14 +29,13 @@ export default function Home() {
           </div>
           <div className="stat-card">
             <h3>10+ hrs</h3>
-            <p>Weekly Time Saved</p>
+            <p>Weekly Business Time Saved</p>
           </div>
           <div className="stat-card">
-            <h3>BSCS</h3>
-            <p>Computer Science</p>
+            <h3>Full-Stack</h3>
+            <p>React, Node & Webhooks</p>
           </div>
         </div>
-
       </div>
     </section>
   );
