@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './Projects.css';
 
+// 1. Apne screenshots yahan import karein (Files src/assets/ folder me rakhein):
+import fbImg from './src/assets/fb-workflow.png';
+import docImg from './src/assets/doc-workflow.png';
+import groceryImg from './src/assets/grocery-workflow.png';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
