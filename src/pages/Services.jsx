@@ -2,34 +2,52 @@ import React from 'react';
 import './Services.css';
 
 export default function Services() {
-  const services = [
+  const servicesList = [
     {
-      title: "React Web Applications",
-      desc: "Building modern, high-performance single-page applications tailored to business requirements."
+      icon: "⚡",
+      title: "Full-Stack Web Development",
+      description: "Building responsive, modern Single Page Applications (SPAs) using React.js, Tailwind CSS, and clean JavaScript architecture focused on high performance.",
+      deliverables: ["Custom React SPAs", "State Management", "Tailwind UI Components"]
     },
     {
-      title: "Workflow Automation",
-      desc: "Configuring backend automations and HTTP webhooks to stream data seamlessly across services."
+      icon: "🤖",
+      title: "AI Agent & n8n Automations",
+      description: "Designing end-to-end automated pipelines that connect your databases, AI models (Gemini/OpenAI), and webhooks to eliminate manual data entry.",
+      deliverables: ["n8n Workflow Design", "Google Gemini AI Integration", "Automated Lead Processing"]
     },
     {
-      title: "Form & API Integration",
-      desc: "Developing reliable input forms that format and transmit structured data directly to target endpoints."
+      icon: "🔗",
+      title: "REST APIs & Webhook Systems",
+      description: "Connecting frontend platforms to backend databases, webhooks, and third-party SaaS tools like Meta Graph API, Google Sheets, and Buffer.",
+      deliverables: ["Custom Webhook Endpoints", "API Data Transformation", "JSON Payload Processing"]
     }
   ];
 
   return (
-    <div className="services-container">
-      <h1 className="services-heading">Services</h1>
-      <p className="services-subtext">Solutions engineered to accelerate web development and automate operations.</p>
+    <section className="services-container" id="services">
+      <div className="services-header">
+        <h2 className="services-heading">Solutions & Services</h2>
+        <p className="services-subtext">Engineered solutions bridging the gap between web interfaces and automated backend systems.</p>
+      </div>
 
-      <div className="services-list">
-        {services.map((item, index) => (
+      <div className="services-grid">
+        {servicesList.map((service, index) => (
           <div key={index} className="service-card">
-            <h3 className="service-title">{item.title}</h3>
-            <p className="service-desc">{item.desc}</p>
+            <div className="service-icon">{service.icon}</div>
+            <h3 className="service-title">{service.title}</h3>
+            <p className="service-desc">{service.description}</p>
+            
+            <div className="deliverables-box">
+              <h4>Key Deliverables:</h4>
+              <ul>
+                {service.deliverables.map((item, i) => (
+                  <li key={i}><span>✓</span> {item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

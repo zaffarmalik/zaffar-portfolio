@@ -1,43 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Home.css';
 
 export default function Home() {
   return (
-    <div className="home-container">
-      <section className="home-hero">
-        <span className="home-badge">Available for Projects</span>
+    <section className="home-container">
+      <div className="home-content">
+        <div className="status-badge">
+          <span className="pulsing-dot"></span> Available for Web & AI Automation Projects
+        </div>
+
         <h1 className="home-title">
-          Crafting Web Experiences & <span className="highlight">zaffar-portfolio</span>
+          Building Next-Gen <span className="highlight-text">Web Apps</span> & <span className="highlight-text">AI Workflows</span>
         </h1>
-        <p className="home-description">
-          Hi, I'm Zaffar Khurram. I specialize in building fast single-page applications 
-          and scalable automated workflows that optimize web performance.
+
+        <p className="home-subtitle">
+          Hi, I'm <strong className="white-text">Zaffar Khurram</strong>. I specialize in crafting fast React frontends and architecting autonomous n8n automation pipelines that cut operational overhead.
         </p>
 
-        <div className="home-btn-group">
-          <Link to="/projects" className="btn-primary">View My Work</Link>
-          <Link to="/contact" className="btn-secondary">Let's Connect</Link>
+        <div className="home-cta-group">
+          <a href="#projects" className="primary-btn">View Featured Work</a>
+          <a href="#contact" className="secondary-btn">Get In Touch</a>
         </div>
-      </section>
 
-      <section className="home-grid">
-        <div className="home-card">
-          <div className="card-icon">⚡</div>
-          <h3>Frontend Development</h3>
-          <p>Building clean, responsive single-page interfaces using React and modern JavaScript.</p>
+        <div className="stats-grid">
+          <div className="stat-card">
+            <h3>99%+</h3>
+            <p>Workflow Reliability</p>
+          </div>
+          <div className="stat-card">
+            <h3>10+ hrs</h3>
+            <p>Weekly Business Time Saved</p>
+          </div>
+          <div className="stat-card">
+            <h3>Full-Stack</h3>
+            <p>React, Node & Webhooks</p>
+          </div>
         </div>
-        <div className="home-card">
-          <div className="card-icon">⚙️</div>
-          <h3>Backend Workflows</h3>
-          <p>Connecting webhooks, REST APIs, and automated pipelines for streamlined data flow.</p>
-        </div>
-        <div className="home-card">
-          <div className="card-icon">🎯</div>
-          <h3>Custom Applications</h3>
-          <p>Designing tailored web tools, trackers, and data validation systems.</p>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
