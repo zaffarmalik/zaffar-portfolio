@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './Projects.css';
 
 // Aap apne screenshots yahan import kar sakte hain:
-// import fbSchedulerImg from './assets/fb-scheduler.png';
-// import docClassifierImg from './assets/doc-classifier.png';
-// import groceryAppImg from './assets/grocery-app.png';
+// import fbSchedulerImg from './assets/facebook post via buffer.png';
+// import docClassifierImg from './assets/Smart Documents .png';
+// import groceryAppImg from './assets/groocery store.png';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
