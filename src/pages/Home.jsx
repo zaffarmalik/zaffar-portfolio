@@ -12,7 +12,7 @@ export default function Home() {
           <div className="profile-img-container">
             {/* Apni pic yahan Replace karein */}
             <img 
-              src="{profileImg}" 
+              src="{WhatsApp Image 2026-07-25 at 1.33.45 PM.jpeg}" 
               alt="Zaffar Khurram" 
               className="profile-img" 
             />
