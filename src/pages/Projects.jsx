@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Projects.css';
 
-// Aap apne screenshots yahan import kar sakte hain:
-// import fbSchedulerImg from './assets/facebook post via buffer.png';
-// import docClassifierImg from './assets/Smart Documents .png';
-// import groceryAppImg from './assets/groocery store.png';
+// 1. Apne screenshots yahan import karein (Files src/assets/ folder me rakhein):
+import fbImg from './assets/fb-workflow.png';
+import docImg from './assets/doc-workflow.png';
+import groceryImg from './assets/grocery-workflow.png';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -17,8 +17,7 @@ export default function Projects() {
       fullDesc: "An end-to-end automation workflow built in n8n. It periodically checks a Google Sheet for scheduled content, uses Google Gemini AI to optimize captions/hashtags, and dispatches posts directly via Meta Graph API & Buffer.",
       metrics: "⚡ Saves 10+ hours/week | 99.9% Execution Reliability",
       tags: ["Google Sheets", "AI Agent", "Google Gemini", "HTTP Request", "Buffer API"],
-      // Yahan screenshot ka path ya variable dein:
-      image: "https://via.placeholder.com/600x350/111827/38bdf8?text=FB+Post+Scheduler+Workflow", 
+      image: fbImg, 
       github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/01-FBPage-Post-Scheduler"
     },
     {
@@ -28,7 +27,7 @@ export default function Projects() {
       fullDesc: "This workflow automatically triggers whenever a document is added to Google Drive. It extracts unstructured text, feeds it into Gemini AI to identify file type, moves it to its target folder, and appends metadata into Google Sheets.",
       metrics: "📄 Zero manual sorting | Instant document processing",
       tags: ["Google Drive", "Extract File", "AI Agent", "Google Gemini", "Switch Node", "Google Sheets"],
-      image: "https://via.placeholder.com/600x350/111827/38bdf8?text=Smart+Document+Classifier+Workflow",
+      image: docImg,
       github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/02-Smart-Document-Classifier"
     },
     {
@@ -38,7 +37,7 @@ export default function Projects() {
       fullDesc: "Handles full backend checkout flows triggered by frontend webhooks. Runs custom JavaScript validations, updates inventory logs in Google Sheets, generates AI confirmation summaries, and dispatches automated emails.",
       metrics: "🛒 Instant webhook triggers | Automated order updates",
       tags: ["Webhook", "AI Agent", "Google Gemini", "JavaScript", "Google Sheets", "Gmail"],
-      image: "https://via.placeholder.com/600x350/111827/38bdf8?text=Grocery+App+Workflow",
+      image: groceryImg,
       github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/03-Groccery-App"
     }
   ];
