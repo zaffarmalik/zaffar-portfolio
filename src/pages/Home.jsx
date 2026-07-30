@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-// import profileImg from './assets/profile.jpg'; // src/assets/WhatsApp Image 2026-07-25 at 1.33.45 PM.jpeg
+// import profileImg from './assets/profile.jpg'; // src/assets/src/assets/WhatsApp Image 2026-07-25 at 1.33.45 PM.jpeg
 
 export default function Home() {
   return (
