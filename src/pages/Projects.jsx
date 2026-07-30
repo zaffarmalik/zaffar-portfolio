@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './Projects.css';
 
+// Aap apne screenshots yahan import kar sakte hain:
+// import fbSchedulerImg from './assets/fb-scheduler.png';
+// import docClassifierImg from './assets/doc-classifier.png';
+// import groceryAppImg from './assets/grocery-app.png';
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -9,35 +14,37 @@ export default function Projects() {
       id: 1,
       title: "Facebook Page Post Scheduler",
       shortDesc: "Automated social publishing workflow saving 10+ hours of manual posting weekly.",
-      fullDesc: "An end-to-end automation workflow built in n8n. It periodically checks a Google Sheet for scheduled content, uses Google Gemini AI to optimize the captions/hashtags, and dispatches posts directly via Meta Graph API & Buffer.",
+      fullDesc: "An end-to-end automation workflow built in n8n. It periodically checks a Google Sheet for scheduled content, uses Google Gemini AI to optimize captions/hashtags, and dispatches posts directly via Meta Graph API & Buffer.",
       metrics: "⚡ Saves 10+ hours/week | 99.9% Execution Reliability",
       tags: ["Google Sheets", "AI Agent", "Google Gemini", "HTTP Request", "Buffer API"],
+      // Yahan screenshot ka path ya variable dein:
+      image: "https://via.placeholder.com/600x350/111827/38bdf8?text=FB+Post+Scheduler+Workflow", 
       github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/01-FBPage-Post-Scheduler"
     },
     {
       id: 2,
       title: "Smart Document Classifier",
-      description: "AI-powered document processing pipeline that automatically parses incoming PDFs, categorizes files by content type, and routes metadata to target platforms.",
       shortDesc: "AI-powered PDF parser & classifier with automatic folder sorting in Google Drive.",
-      fullDesc: "This workflow automatically triggers whenever a document is added to Google Drive. It extracts unstructured text, feeds it into Gemini AI to identify whether it's an invoice, contract, or receipt, moves the file to its specific folder, and appends extracted metadata into Google Sheets.",
+      fullDesc: "This workflow automatically triggers whenever a document is added to Google Drive. It extracts unstructured text, feeds it into Gemini AI to identify file type, moves it to its target folder, and appends metadata into Google Sheets.",
       metrics: "📄 Zero manual sorting | Instant document processing",
       tags: ["Google Drive", "Extract File", "AI Agent", "Google Gemini", "Switch Node", "Google Sheets"],
+      image: "https://via.placeholder.com/600x350/111827/38bdf8?text=Smart+Document+Classifier+Workflow",
       github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/02-Smart-Document-Classifier"
     },
     {
       id: 3,
       title: "Grocery Shopping App Workflow",
       shortDesc: "Real-time ecommerce order pipeline with instant Gmail customer notifications.",
-      fullDesc: "Handles full backend checkout flows triggered by frontend webhooks. Runs custom JavaScript validations, updates inventory logs in Google Sheets, generates AI confirmation summaries, and dispatches automated emails to customers via Gmail.",
+      fullDesc: "Handles full backend checkout flows triggered by frontend webhooks. Runs custom JavaScript validations, updates inventory logs in Google Sheets, generates AI confirmation summaries, and dispatches automated emails.",
       metrics: "🛒 Instant webhook triggers | Automated order updates",
       tags: ["Webhook", "AI Agent", "Google Gemini", "JavaScript", "Google Sheets", "Gmail"],
+      image: "https://via.placeholder.com/600x350/111827/38bdf8?text=Grocery+App+Workflow",
       github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/03-Groccery-App"
     }
   ];
 
   return (
-    <div className="projects-container">
-      {/* Top Banner / Hero Info */}
+    <div className="projects-container" id="projects">
       <div className="header-section">
         <div className="status-badge">
           <span className="pulsing-dot"></span> Available for Freelance & Automation Work
@@ -48,14 +55,28 @@ export default function Projects() {
         </p>
       </div>
 
-      {/* Projects Grid */}
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
+            
+            {/* Workflow Screenshot Preview Container */}
+            <div 
+              className="project-image-container" 
+              onClick={() => setSelectedProject(project)}
+            >
+              <img 
+                src={project.image} 
+                alt={`${project.title} Screenshot`} 
+                className="project-image" 
+              />
+              <div className="image-overlay">
+                <span>🔍 Click to Expand Workflow</span>
+              </div>
+            </div>
+
             <div className="project-content">
               <h3 className="project-title">{project.title}</h3>
               <p className="project-desc">{project.shortDesc}</p>
-              
               <div className="project-metric">{project.metrics}</div>
             </div>
 
@@ -86,12 +107,23 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Interactive Architecture Modal */}
+      {/* Full Screenshot Modal Popup */}
       {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-card modal-large" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={() => setSelectedProject(null)}>✕</button>
+            
             <h2 className="modal-title">{selectedProject.title}</h2>
+            
+            {/* Full Screenshot Preview inside Modal */}
+            <div className="modal-image-wrapper">
+              <img 
+                src={selectedProject.image} 
+                alt={`${selectedProject.title} Full Architecture`} 
+                className="modal-full-image" 
+              />
+            </div>
+
             <p className="modal-desc">{selectedProject.fullDesc}</p>
             
             <div className="modal-section">
