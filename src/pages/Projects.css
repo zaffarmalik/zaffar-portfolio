@@ -1,9 +1,14 @@
+/* ==========================================================================
+   Page & Outer Wrapper Fix
+   ========================================================================== */
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 1.5rem;
   color: #e2e8f0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0b0f19; /* Full Page Dark Background Fix */
+  min-height: 100vh;
 }
 
 /* Header Section */
@@ -63,7 +68,9 @@
   line-height: 1.6;
 }
 
-/* Projects Grid & Cards */
+/* ==========================================================================
+   Projects Grid & Cards
+   ========================================================================== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -232,7 +239,9 @@
   fill: currentColor;
 }
 
-/* Modal Popup Styles */
+/* ==========================================================================
+   Modal Popup Styles
+   ========================================================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -347,6 +356,7 @@
   margin-top: 1rem;
 }
 
+/* Responsive Media Query */
 @media (max-width: 640px) {
   .projects-heading {
     font-size: 1.85rem;
