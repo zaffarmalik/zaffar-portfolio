@@ -1,104 +1,82 @@
 .home-container {
-  min-height: 85vh;
+  min-height: 90vh;
+  background-color: #0b0f19;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
-  background-color: #0b0f19;
-  color: #f3f4f6;
-  font-family: 'Inter', system-ui, sans-serif;
+  padding: 4rem 1.5rem;
+  color: #e2e8f0;
 }
 
 .home-content {
-  max-width: 800px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3.5rem;
   align-items: center;
 }
 
-.white-text { color: #ffffff; }
-
-.home-title {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin: 20px 0;
-  letter-spacing: -0.02em;
-}
-
-.highlight-text {
-  background: linear-gradient(135deg, #6366f1 0%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.home-subtitle {
-  font-size: 1.15rem;
-  color: #94a3b8;
-  line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 680px;
-}
-
-.home-cta-group {
+/* Image Side Layout & Effects */
+.home-image-side {
+  position: relative;
   display: flex;
-  gap: 16px;
-  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
-.primary-btn {
-  background: #6366f1;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
+.image-glow {
+  position: absolute;
+  width: 300px;
+  height: 360px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(56, 189, 248, 0.25));
+  filter: blur(45px);
+  border-radius: 20px;
+  z-index: 1;
 }
 
-.primary-btn:hover {
-  background: #4f46e5;
-  transform: translateY(-2px);
+.image-frame {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #1e293b;
+  z-index: 2;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
 }
 
-.secondary-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f3f4f6;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s ease;
+.image-frame:hover {
+  transform: translateY(-5px);
 }
 
-.secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.profile-photo {
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 30px;
+  height: 100%;
+  object-fit: cover;
 }
 
-.stat-card h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #38bdf8;
-  margin-bottom: 4px;
+.image-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 15, 25, 0.5) 0%, transparent 35%);
 }
 
-.stat-card p {
-  font-size: 0.85rem;
-  color: #64748b;
-}
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .home-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .home-image-side {
+    order: -1; /* Mobile par pic pehle nazar aaye gi */
+  }
 
-@media (max-width: 640px) {
-  .home-title { font-size: 2.2rem; }
-  .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+  .image-frame {
+    width: 260px;
+    height: 310px;
+  }
 }
