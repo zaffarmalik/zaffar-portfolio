@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import './Projects.css';
 
-// 1. Apne screenshots yahan import karein (Files src/assets/ folder me rakhein):
+// Screenshots import matching your exact assets folder file names
 import fbImg from "../assets/fb-workflow.png";
 import docImg from "../assets/doc-workflow.png";
 import groceryImg from "../assets/grocery-workflow.png";
+import mobileTechImg from "../assets/AI-Mobile-Tech-Assistant.png";
+import dataProcImg from "../assets/Automated Data Processing & Gmail ....png";
+import customAiImg from "../assets/Custom AI Backend for Web Apps.png";
+import fileSortImg from "../assets/Dynamic File Sorting Workflow.png";
+import sheetChatbotImg from "../assets/Google Sheets Query Chatbot.png";
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -38,6 +44,56 @@ export default function Projects() {
       tags: ["Webhook", "AI Agent", "Google Gemini", "JavaScript", "Google Sheets", "Gmail"],
       image: groceryImg,
       github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/03-Groccery-App"
+    },
+    {
+      id: 4,
+      title: "AI Mobile Tech Assistant",
+      shortDesc: "Interactive AI support assistant with dynamic web retrieval & API tool execution.",
+      fullDesc: "An AI agent workflow triggered via user chat messages or manual execution. Powered by Google Gemini Chat Model and integrated with an HTTP Request tool to dynamically fetch external web data and live technical specifications for device diagnostics.",
+      metrics: "🌐 Dynamic HTTP Tools | Real-time Web Diagnostics",
+      tags: ["Chat Trigger", "Execute Trigger", "AI Agent", "Google Gemini", "HTTP Request Tool"],
+      image: mobileTechImg,
+      github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/04-AI-Mobile-Tech-Assistant"
+    },
+    {
+      id: 5,
+      title: "Automated Data Processing & Gmail Summarizer AI",
+      shortDesc: "Full data pipeline: Sheets reading, JavaScript transformation, AI multi-tool updates & Gmail dispatch.",
+      fullDesc: "Reads records from Google Sheets, transforms data using custom JavaScript, and passes it to an AI Agent with Google Gemini and Simple Memory. The AI executes tools to append/update Sheet records, re-queries updated rows, and dispatches automated summary emails via Gmail.",
+      metrics: "🔄 End-to-End Automation | Multi-Tool Execution & Gmail Dispatch",
+      tags: ["Google Sheets", "JavaScript", "AI Agent", "Google Gemini", "Simple Memory", "Gmail"],
+      image: dataProcImg,
+      github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/05-Automated-Data-Processing"
+    },
+    {
+      id: 6,
+      title: "Custom AI Backend for Web Apps",
+      shortDesc: "Serverless Webhook HTTP POST listener giving instant synchronous AI responses to frontend apps.",
+      fullDesc: "Acts as a serverless backend endpoint for web and mobile applications. Listens for POST Webhook requests, processes query payloads through Google Gemini AI Agent, and instantly sends back clean JSON responses.",
+      metrics: "⚡ Serverless AI Backend | Real-time Webhook API",
+      tags: ["Webhook POST", "AI Agent", "Google Gemini", "Respond to Webhook"],
+      image: customAiImg,
+      github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/06-Custom-AI-Backened-for-webapps"
+    },
+    {
+      id: 7,
+      title: "Dynamic File Sorting Workflow",
+      shortDesc: "Automated Google Drive organizer listening to file uploads & routing them using rule-based logic.",
+      fullDesc: "An event-driven workflow triggering instantly on file creation in Google Drive (`fileCreated`). Evaluates conditions using a rule-based Switch node to route files into appropriate destination folders automatically.",
+      metrics: "📁 Rule-Based Routing | 100% Automated Drive Cleanup",
+      tags: ["Google Drive Trigger", "Switch Node (Rules)", "Move File"],
+      image: fileSortImg,
+      github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/07-Dynamic-File-Sorting"
+    },
+    {
+      id: 8,
+      title: "Google Sheets Query Chatbot",
+      shortDesc: "Conversational AI Chatbot with Simple Memory & dynamic Google Sheets tool querying.",
+      fullDesc: "Interactive AI Chatbot equipped with continuous chat context via Simple Memory. Features an integrated Google Sheets tool node (`Get row(s)`), allowing the Gemini AI Agent to dynamically query spreadsheet databases and return precise context-aware answers.",
+      metrics: "💬 Conversational Memory | On-the-Fly Sheet Queries",
+      tags: ["Chat Trigger", "AI Agent", "Google Gemini", "Simple Memory", "Google Sheets Tool"],
+      image: sheetChatbotImg,
+      github: "https://github.com/zaffarmalik/n8n-automation-workflows/tree/main/08-Google-Sheets-Query-Chatbot"
     }
   ];
 
@@ -57,7 +113,6 @@ export default function Projects() {
         {projects.map((project) => (
           <div key={project.id} className="project-card">
             
-            {/* Workflow Screenshot Preview Container */}
             <div 
               className="project-image-container" 
               onClick={() => setSelectedProject(project)}
@@ -105,7 +160,6 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Full Screenshot Modal Popup */}
       {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
           <div className="modal-card modal-large" onClick={(e) => e.stopPropagation()}>
@@ -113,7 +167,6 @@ export default function Projects() {
             
             <h2 className="modal-title">{selectedProject.title}</h2>
             
-            {/* Full Screenshot Preview inside Modal */}
             <div className="modal-image-wrapper">
               <img 
                 src={selectedProject.image} 
