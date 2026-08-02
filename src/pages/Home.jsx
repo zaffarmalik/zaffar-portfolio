@@ -1,8 +1,8 @@
 import React from 'react';
 import './Home.css';
 
-// Agar aap ke assets folder mein profile picture ho (e.g. assets/profile.jpg):
-// import profilePic from '../assets/profile.jpg';
+// Aap ki screenshot me diye gaye exact file name ke sath import
+import profilePic from '../assets/Profile-Pic.jpeg';
 
 export default function Home() {
   return (
@@ -44,13 +44,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Column: Professional Profile Photo */}
+        {/* Right Column: Your Profile Photo */}
         <div className="home-image-side">
           <div className="image-glow"></div>
           <div className="image-frame">
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
-              alt="Zaffar Khurram" 
+              src={profilePic} 
+              alt="Zaffar Khurram Profile" 
               className="profile-photo"
             />
             <div className="image-gradient-overlay"></div>
