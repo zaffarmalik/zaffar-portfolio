@@ -6,7 +6,7 @@ import fbImg from "../assets/fb-workflow.png";
 import docImg from "../assets/doc-workflow.png";
 import groceryImg from "../assets/grocery-workflow.png";
 import mobileTechImg from "../assets/AI-Mobile-Tech-Assistant.png";
-import dataProcImg from "../assets/Automated Data Processing & Gmail ....png";
+import dataProcImg from "../assets/Automated Data Processing & Gmail Summarizer AI.png";
 import customAiImg from "../assets/Custom AI Backend for Web Apps.png";
 import fileSortImg from "../assets/Dynamic File Sorting Workflow.png";
 import sheetChatbotImg from "../assets/Google Sheets Query Chatbot.png";
