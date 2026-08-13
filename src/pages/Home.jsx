@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 
+// Profile picture import
 import profilePic from '../assets/Profile-Pic.jpeg';
 
 export default function Home() {
@@ -8,16 +9,14 @@ export default function Home() {
     <section className="home-container" id="home">
       <div className="home-content">
         
-        {/* Top Section: Small Top-Aligned Profile Picture */}
+        {/* Profile Pic Section - WhatsApp Avatar Style */}
         <div className="home-image-side-top">
-          <div className="image-glow"></div>
-          <div className="image-frame-small">
+          <div className="avatar-frame">
             <img 
               src={profilePic} 
               alt="Zaffar Khurram Profile" 
-              className="profile-photo"
+              className="profile-photo-avatar"
             />
-            <div className="image-gradient-overlay"></div>
           </div>
         </div>
 
