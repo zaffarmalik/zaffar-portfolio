@@ -1,82 +1,81 @@
 .home-container {
-  min-height: 90vh;
-  background-color: #0b0f19;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 1.5rem;
-  color: #e2e8f0;
+  padding: 4rem 2rem;
 }
 
 .home-content {
-  max-width: 1200px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 3.5rem;
+  display: flex;
+  flex-direction: column; /* Content vertical sequence me align hoga */
   align-items: center;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* Image Side Layout & Effects */
-.home-image-side {
+/* Image Top Alignment & Small Size Wrapper */
+.home-image-side-top {
   position: relative;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Frame size control */
+.image-frame-small {
+  position: relative;
+  width: 130px;  /* Small Avatar size */
+  height: 130px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+  overflow: hidden;
+}
+
+.image-frame-small .profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 .image-glow {
   position: absolute;
-  width: 300px;
-  height: 360px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(56, 189, 248, 0.25));
-  filter: blur(45px);
-  border-radius: 20px;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.image-frame {
-  position: relative;
-  width: 320px;
-  height: 380px;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: #1e293b;
-  z-index: 2;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-}
-
-.image-frame:hover {
-  transform: translateY(-5px);
-}
-
-.profile-photo {
+.home-text-side {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.image-gradient-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(11, 15, 25, 0.5) 0%, transparent 35%);
+.home-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
 }
 
-/* Mobile Responsive */
-@media (max-width: 968px) {
-  .home-content {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  
-  .home-image-side {
-    order: -1; /* Mobile par pic pehle nazar aaye gi */
-  }
-
-  .image-frame {
-    width: 260px;
-    height: 310px;
-  }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Home.css';
 
-// Aap ki screenshot me diye gaye exact file name ke sath import
 import profilePic from '../assets/Profile-Pic.jpeg';
 
 export default function Home() {
@@ -9,7 +8,20 @@ export default function Home() {
     <section className="home-container" id="home">
       <div className="home-content">
         
-        {/* Left Column: Text & Content */}
+        {/* Top Section: Small Top-Aligned Profile Picture */}
+        <div className="home-image-side-top">
+          <div className="image-glow"></div>
+          <div className="image-frame-small">
+            <img 
+              src={profilePic} 
+              alt="Zaffar Khurram Profile" 
+              className="profile-photo"
+            />
+            <div className="image-gradient-overlay"></div>
+          </div>
+        </div>
+
+        {/* Text & Primary Content Section */}
         <div className="home-text-side">
           <div className="status-badge">
             <span className="pulsing-dot"></span> Available for Web & AI Automation Projects
@@ -41,19 +53,6 @@ export default function Home() {
               <h3>Full-Stack</h3>
               <p>React, Node & Webhooks</p>
             </div>
-          </div>
-        </div>
-
-        {/* Right Column: Your Profile Photo */}
-        <div className="home-image-side">
-          <div className="image-glow"></div>
-          <div className="image-frame">
-            <img 
-              src={profilePic} 
-              alt="Zaffar Khurram Profile" 
-              className="profile-photo"
-            />
-            <div className="image-gradient-overlay"></div>
           </div>
         </div>
 
